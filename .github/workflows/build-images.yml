@@ -1,13 +1,14 @@
 name: Build images
 
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   build:
     strategy:
       fail-fast: false
       matrix:
-        device: [sm7150-google-sunfish, sm7150-xiaomi-davinci-samsung, sm7150-xiaomi-davinci-visionox, sm7150-xiaomi-surya-huaxing, sm7150-xiaomi-surya-tianma, sm7150-xiaomi-sweet, sm7150-xiaomi-toco, sm7150-xiaomi-tucana]
+        device: [sm7150-xiaomi-surya-huaxing]
 
     name: Build ${{ matrix.device }}
     runs-on: ubuntu-latest
